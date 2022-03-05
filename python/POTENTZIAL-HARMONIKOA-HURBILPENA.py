@@ -20,11 +20,11 @@ h = x[1]-x[0] # Should be equal to 2*np.pi/(N-1)
 
 #POTENTZIALA FINKATUKO BEHAR DUGU
 V2 = .5*k*x*x
-V1=np.linspace(0,0,N)
+V1=np.full(N,0)
 esk=100
 E=100
 a=E/esk
-
+E_bek=np.full(N,E)
 
 for i in range(len(x)):
     S=0
@@ -62,10 +62,9 @@ ax2 = ax1.twinx()
 ax2.set_ylabel('$V(x)$')
 plt.title('Harmonic Oscillator')
 
-ax2.plot(x,V1,color="blue",label="$V_1(x)$")
-ax2.plot(x,V2,color="grey",label="$V_2(x)$",linewidth=0.5,linestyle='dashed')
 
 
+ax1.grid(True, linestyle='-.')
 plt.xlim((-10.,10.))
 for i in range(0,3):
     if psi1[i][N//8] < 0:
@@ -77,9 +76,13 @@ for i in range(0,3):
     else:
         ax1.plot(x,psi2[i]/np.sqrt(h),label="$E_{}$={:3.1f}".format(i,En2[i]),linestyle='dashed',color="grey",linewidth=0.5)
 
+ax2.plot(x,V1,color="blue",label="$V_1(x)$")
+ax2.plot(x,V2,color="grey",label="$V_2(x)$",linewidth=0.5,linestyle='dashed')
+ax2.plot(x,E_bek,color="red",label="$E$")
 
 plt.title("Solution to harmonic oscillator")
 plt.legend()
 plt.savefig("Harmonic_Oscillator_WaveFunctions.svg")
 plt.show()
+
 
