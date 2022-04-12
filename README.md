@@ -2,4 +2,4 @@
 Nanoproiektuan erabilitako programei buruzko errepositorioa
 
 # Nola erabili
-Bi bertsio daude momentu honetan: pythonekoa eta fortranekoa. Bakoitzarentzako instrukzioak karpetetan daude
+Erabili dugun programaren bi bertsio daude momentu honetan: pythonekoa eta fortranekoa. Bideoan erakutsitako datuak sortzeko fortraneko kodea erabili dugu, eta GNUPLOT programa grafikoak egiteko. Sortutako grafikoak Irudiak karpetan daude.
